@@ -9,4 +9,5 @@
 - Developed first with the Mobile First methodology, then for Desktop.
 - Compatible with all mobile devices.
 
+### 🖼️ Preview Image
 ![preview img](/preview.png)
