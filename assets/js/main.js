@@ -200,4 +200,3 @@ sr.reveal(`.testimonial__container`)
 
 sr.reveal('.contact__right', {origin: 'right'})
 sr.reveal('.contact__left', {origin: 'left'})
-
