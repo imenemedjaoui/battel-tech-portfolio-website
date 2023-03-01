@@ -33,7 +33,15 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 
 
 /*=============== SWIPER TESTIMONIAL ===============*/
+let swiperTestimonial = new Swiper(".testimonial__container", {
 
+    grabCursor: true,
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
 
 /*=============== EMAIL JS ===============*/
 const contactForm = document.getElementById('contact-form'),
@@ -55,7 +63,7 @@ const sendEmail = (e) =>{
         contactMessage.textContent = 'Write all the input fields 💬' 
     }else{
         //serviceID - templateID - #form -publicKey 
-        emailjs.sendForm('service_cezmb8l','template_ujj8lia','#contact-form','W-I2PRPByltfXOQHw')
+        emailjs.sendForm('service_0b56y41','template_h3mv2ho','#contact-form','W-I2PRPByltfXOQHw')
             .then(() =>{
                 //show message and add color
                 contactMessage.classList.add('color-blue')
@@ -122,13 +130,13 @@ const selectedIcon = localStorage.getItem('selected-icon')
 
 // We obtain the current theme that the interface has by validating the dark-theme class
 const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line'
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-clear-line' : 'ri-sun-line'
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {
   // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
   document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
+  themeButton.classList[selectedIcon === 'ri-moon-clear-line' ? 'add' : 'remove'](iconTheme)
 }
 
 // Activate / deactivate the theme manually with the button
@@ -142,7 +150,54 @@ themeButton.addEventListener('click', () => {
 })
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
+const scrollHeader = () =>{
+    const header = document.getElementById('header')
+    // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
+    this.scrollY >= 50 ? header.classList.add('bg-header') 
+                       : header.classList.remove('bg-header')
+}
+window.addEventListener('scroll', scrollHeader)
+
+/*=============== TESTIMONIAL SWIPER ===============*/
+let testimonialSwiper = new Swiper(".testimonial-swiper", {
+    spaceBetween: 30,
+    loop: 'true',
+
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
 
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+    //reset: true /* Animation Repeat */
+})
+
+sr.reveal(`.home__data`)
+
+sr.reveal(`.home__info div`, {delay: 600, origin: 'bottom', interval: 100})
+
+sr.reveal(`.skills__content:nth-child(1)`, {delay: 600, origin: 'left'})
+sr.reveal(`.skills__content:nth-child(2)`, {delay: 600, origin: 'right'})
+sr.reveal(`.skills__content:nth-child(3)`, {delay: 600, origin: 'left'})
+sr.reveal(`.skills__content:nth-child(4)`, {delay: 600, origin: 'right'})
+sr.reveal(`.skills__content:nth-child(5)`, {delay: 600, origin: 'left'})
+sr.reveal(`.skills__content:nth-child(6)`, {delay: 600, origin: 'right'})
+
+sr.reveal(`.qualification__content`, {interval: 100})
+
+sr.reveal(`.services__card`, {interval: 100})
+
+sr.reveal(`.projects__container`)
+
+sr.reveal(`.testimonial__container`)
+
+sr.reveal('.contact__right', {origin: 'right'})
+sr.reveal('.contact__left', {origin: 'left'})
 
