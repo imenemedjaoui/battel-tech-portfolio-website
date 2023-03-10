@@ -176,7 +176,7 @@ const sr = ScrollReveal({
     distance: '60px',
     duration: 2500,
     delay: 400,
-    reset: true /* Animation Repeat */
+    //reset: true /* Animation Repeat */
 })
 
 sr.reveal(`.home__data`)
@@ -201,6 +201,7 @@ sr.reveal(`.testimonial__container`)
 sr.reveal('.contact__right', {origin: 'right'})
 sr.reveal('.contact__left', {origin: 'left'})
 
+
 /* BACKGROUND ANIMATED WALLPAPER */
 
 // Some random colors
@@ -216,7 +217,7 @@ for (let i = 0; i < numBalls; i++) {
   ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
   ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
   ball.style.transform = `scale(${Math.random()})`;
-  ball.style.width = `${Math.random()}em`;
+  ball.style.width = `${Math.random() * 2}em`;
   ball.style.height = ball.style.width;
   
   balls.push(ball);
