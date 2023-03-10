@@ -212,7 +212,7 @@ body.dark-theme {
   justify-content: space-between;
   align-items: center;
   background-color: var(--body-color);
-  box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
+  box-shadow: 0 4px 20px hsl(207, 24%, 25%, .15);
   padding-inline: 1.5rem;
   border-radius: 3rem;  
   transition: background .4s; /* for dark mode animation */
@@ -411,7 +411,12 @@ body.dark-theme {
 
 .home__info-description{
   padding-right: 4rem;
-
+  padding-top: .5rem;
+  padding-left: .5rem;
+  padding-bottom: .5rem;
+  background-color: var(--body-color);
+  border-radius: 3rem;
+  transition: background .4s;
 }
 
 .home__info-number{
@@ -596,6 +601,7 @@ body.dark-theme {
   font-size: var(--h1-font-size);
   font-weight: var(--font-semi-bold);
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .services__border{
@@ -635,6 +641,10 @@ body.dark-theme {
 
 .testimonial__content{
   text-align: center;
+  padding: 1rem;
+  background-color: var(--body-color);
+  border-radius: 3rem;
+  transition: background .4s;
 }
 
 .testimonial__description{
@@ -755,6 +765,44 @@ body.dark-theme {
   transition: transform .3s;
 }
 
+#submit-button{
+  position: sticky;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  border-radius: 1rem;
+  background-color: hsla(200, 4%, 85%, 0.5);
+  margin: 2px;
+  transition: background .4s;
+  box-shadow: 0 10px 10px -8px hsla(200, 4%, 55%, 0.7);
+}
+
+#submit-button:hover{
+  background-color: hsla(200, 4%, 85%, 0.9);
+  border: 2px solid hsla(200, 4%, 80%, 0.7);
+  margin: 0px;
+}
+
+#submit-button:focus{
+  background-color: rgb(150, 220, 170);
+}
+
+
+.dark-theme #submit-button{
+  background-color: hsla(207, 4%, 15%, 0.5);
+  box-shadow: 0 10px 10px -8px hsla(207, 4%, 7%, 0.9);
+}
+
+.dark-theme #submit-button:hover{
+  background-color: hsla(207, 4%, 15%, 0.9);
+  border: 2px solid hsla(207, 4%, 20%, 0.7);
+}
+
+.dark-theme #submit-button:focus{
+  background-color: rgba(150, 220, 170, 0.7);
+  color: black;
+}
+
+
 .contact__button:hover i{
   transform: translateX(.25rem);
 }
@@ -782,21 +830,23 @@ body.dark-theme {
   font-family: var(--title-font);
   color: var(--title-color);
   background: none;
+  background-color: var(--body-color);
   outline: none;
   z-index: 1;
+  transition: background .4s;
 }
 
 
 
 .contact__form-tag{
-  position: sticky;
+  position: relative;
   top: -.75rem;
-  left: 2.25rem;
+  left: 2.75rem;
   z-index: 10;
-  background-color: var(--body-color);
   color: var(--title-color);
   font-size: var(--smaller-font-size);
   font-weight: var(--font-medium);
+  margin-top: 0.5rem;
   padding: .35rem;
 }
 
@@ -959,6 +1009,10 @@ body.dark-theme {
     width: 200px;
     justify-self: center;
   }
+
+  .skills__title{
+    margin-bottom: 1rem;
+  }
 }
 
 /* For medium devices */
@@ -991,6 +1045,10 @@ body.dark-theme {
 
   .projects__container .swiper-button-next{
     right: 1rem;
+  }
+
+  .skills__title{
+    margin-bottom: 1rem;
   }
 
 }
@@ -1046,9 +1104,13 @@ body.dark-theme {
     column-gap: 8rem;
   }
 
+  .skills__title{
+    margin-bottom: 1rem;
+  }
+
 }
 /* For large devices */
-@media screen and (min-width: 1023px){
+@media screen and (min-width: 1024px){
 
   .header{
     top: 0;
@@ -1067,6 +1129,8 @@ body.dark-theme {
     padding: 0;
   }
 
+  
+
   .nav__link i,
   .nav__toggle,
   .nav__close{
@@ -1079,6 +1143,7 @@ body.dark-theme {
     background-color: var(--body-color);
     transition: background .4s;
   }
+
 
   .nav__list{
     display: flex;
@@ -1112,6 +1177,23 @@ body.dark-theme {
 
   }
 
+  .services__card{
+    width: 265px;
+    height: 365px;
+    border-radius: 7.6rem;
+    padding: 3.5rem 1.5rem;
+  }
+
+  .services__card i{
+    font-size: 2.5rem;
+  }
+
+  .services__border{
+    width: 285px;
+    height: 385px;
+    border-radius: 8.25rem;
+  }
+
   .scrollup{
     right: 3rem;
   }
@@ -1136,6 +1218,23 @@ body.dark-theme {
 
   .container{
     margin-inline: auto;
+  }
+
+  .services__card{
+    width: 295px;
+    height: 395px;
+    border-radius: 7.6rem;
+    padding: 3.5rem 1.5rem;
+  }
+
+  .services__card i{
+    font-size: 2.5rem;
+  }
+
+  .services__border{
+    width: 315px;
+    height: 415px;
+    border-radius: 8.25rem;
   }
 }
 
@@ -1358,13 +1457,61 @@ body.dark-theme {
   .footer__copy{
     margin-top: 5rem;
   }
+
+  .services__card{
+    width: 295px;
+    height: 395px;
+    border-radius: 7.6rem;
+    padding: 3.5rem 1.5rem;
+  }
+
+  .services__card i{
+    font-size: 3rem;
+  }
+
+  .services__border{
+    width: 315px;
+    height: 415px;
+    border-radius: 8.25rem;
+  }
+
 }
 
 /* background animated wallpaper */
 .ball {
   position: fixed;
   border-radius: 100%;
-  opacity: 0.7;
+  opacity: 0.4;
   z-index: -1;
+  animation: animate 15s linear infinite;
 }
 
+@keyframes animate {
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity: 0.1;
+  }
+
+  30%{
+    opacity: 0.3;
+  }
+
+  50%{
+    opacity: 0.5;
+  }
+
+  70%{
+    opacity: 0.3;
+  }
+
+  90%{
+    opacity: 0.1;
+  }
+
+  100%{
+    opacity: 0;
+  }
+
+}
